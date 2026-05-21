@@ -1,0 +1,31 @@
+# Gateway Commerce — Netlify configuration
+
+[build]
+  publish = "."
+
+# Send the right headers so bots and humans both get a usable response.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Allow indexing explicitly
+    X-Robots-Tag = "all"
+
+# Cache static assets for a year
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Older AI page id used "ai" in the SPA — redirect to /ai-assessment/
+[[redirects]]
+  from = "/ai"
+  to = "/ai-assessment/"
+  status = 301
+
+[[redirects]]
+  from = "/ai/"
+  to = "/ai-assessment/"
+  status = 301
