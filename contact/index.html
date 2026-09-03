@@ -33,7 +33,7 @@
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{
-      --gold:#B8973A;--gold-light:#D4B05A;--gold-pale:#F5EDD6;
+      --gold:#B8973A;--gold-light:#D4B05A;--gold-pale:#F5EDD6;--gold-text:#806928;
       --navy:#0D1B2A;--navy-mid:#1A2E42;--navy-light:#2C4057;
       --slate:#4A5E72;--mist:#E8EDF2;--white:#FAFBFC;
       --text:#0D1B2A;--text-muted:#4A5E72;--nav-h:64px;
@@ -80,8 +80,8 @@
 
     /* SHARED SECTION STYLES */
     .sec-wrap{padding:5.5rem 4rem;}
-    .sec-eyebrow{font-size:0.72rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:1rem;}
-    .sec-eyebrow::before{content:"";width:2rem;height:1px;background:var(--gold);}
+    .sec-eyebrow{font-size:0.72rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-text);margin-bottom:1rem;display:flex;align-items:center;gap:1rem;}
+    .sec-eyebrow::before{content:"";width:2rem;height:1px;background:var(--gold-text);}
     .sec-heading{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.15;color:var(--text);margin-bottom:0.9rem;}
     .sec-sub{font-size:0.95rem;line-height:1.8;color:var(--text-muted);max-width:520px;margin-bottom:3rem;}
 
@@ -99,7 +99,7 @@
     .about-link{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.7rem 1.5rem;transition:all 0.2s;}
     .about-link.primary{background:var(--gold);color:var(--navy);}
     .about-link.primary:hover{background:var(--gold-light);}
-    .about-link.secondary{border:1px solid var(--gold);color:var(--gold);}
+    .about-link.secondary{border:1px solid var(--gold-text);color:var(--gold-text);}
     .about-link.secondary:hover{background:var(--gold);color:var(--navy);}
 
     /* SERVICES */
@@ -107,12 +107,14 @@
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--mist);border:1.5px solid var(--mist);}
     .service-card{background:var(--white);padding:2.25rem 1.75rem;transition:background 0.2s;}
     .service-card:hover{background:var(--gold-pale);}
-    .service-num{font-family:"Cormorant Garamond",serif;font-size:0.82rem;color:var(--gold);letter-spacing:0.1em;margin-bottom:1.25rem;}
+    .service-num{font-family:"Cormorant Garamond",serif;font-size:0.82rem;color:var(--gold-text);letter-spacing:0.1em;margin-bottom:1.25rem;}
     .service-card h3{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:1.25rem;color:var(--navy);margin-bottom:0.7rem;line-height:1.3;}
     .service-card p{font-size:0.85rem;line-height:1.75;color:var(--text-muted);}
 
     /* CASE STUDIES */
     #case-studies-section{background:var(--navy);}
+    #case-studies-section .sec-eyebrow{color:var(--gold);}
+    #case-studies-section .sec-eyebrow::before{background:var(--gold);}
     #case-studies-section .sec-heading{color:#fff;}
     #case-studies-section .sec-sub{color:rgba(255,255,255,0.5);}
     .carousel-wrapper{position:relative;}
@@ -128,7 +130,7 @@
     .case-role{font-size:0.78rem;color:rgba(255,255,255,0.5);margin-bottom:0.15rem;font-style:italic;}
     .case-period{font-size:0.7rem;color:rgba(255,255,255,0.3);letter-spacing:0.06em;margin-bottom:0.85rem;}
     .case-card h3{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:1.3rem;color:#fff;line-height:1.3;margin-bottom:0.6rem;}
-    .case-desc{font-size:0.8rem;line-height:1.7;color:rgba(255,255,255,0.4);margin-bottom:1.1rem;font-style:italic;}
+    .case-desc{font-size:0.8rem;line-height:1.7;color:rgba(255,255,255,0.58);margin-bottom:1.1rem;font-style:italic;}
     .case-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:0.55rem;margin-bottom:1.35rem;}
     .case-stat-box{background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,58,0.15);padding:0.65rem 0.4rem;text-align:center;}
     .case-stat-box strong{display:block;font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:300;color:var(--gold-light);line-height:1;}
@@ -148,26 +150,28 @@
     .carousel-arrow{width:44px;height:44px;border:1px solid rgba(184,151,58,0.3);background:transparent;color:var(--gold-light);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color 0.2s,background 0.2s;-webkit-tap-highlight-color:transparent;}
     .carousel-arrow:hover{border-color:var(--gold);background:rgba(184,151,58,0.08);}
     .carousel-arrow:disabled{opacity:0.25;cursor:default;}
+    #endorsements-section .carousel-arrow{border-color:rgba(184,151,58,0.45);color:var(--gold-text);}
+    #endorsements-section .carousel-arrow:hover{border-color:var(--gold-text);background:rgba(184,151,58,0.08);}
 
     /* ENDORSEMENTS */
-    #endorsements-section{background:var(--navy-mid);}
-    #endorsements-section .sec-heading{color:#fff;}
-    #endorsements-section .sec-sub{color:rgba(255,255,255,0.5);}
+    #endorsements-section{background:var(--white);}
+    #endorsements-section .sec-heading{color:var(--text);}
+    #endorsements-section .sec-sub{color:var(--text-muted);}
     .endorsements-carousel-outer{overflow:hidden;}
     .endorsements-track{display:flex;gap:1.5rem;transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);}
-    .endorsement-card{flex:0 0 calc(33.333% - 1rem);min-width:0;border:1px solid rgba(184,151,58,0.15);padding:1.75rem;background:rgba(255,255,255,0.03);transition:border-color 0.25s,background 0.25s;}
-    .endorsement-card:hover{border-color:rgba(184,151,58,0.4);background:rgba(255,255,255,0.05);}
-    .endorsement-quote{font-size:1.8rem;color:var(--gold);opacity:0.6;line-height:1;margin-bottom:0.75rem;font-family:"Cormorant Garamond",serif;}
-    .endorsement-text{font-size:0.83rem;line-height:1.75;color:rgba(255,255,255,0.6);margin-bottom:1.25rem;font-style:italic;}
-    .endorsement-name{font-size:0.88rem;font-weight:500;color:#fff;margin-bottom:0.2rem;}
-    .endorsement-title{font-size:0.75rem;color:rgba(255,255,255,0.4);margin-bottom:0.2rem;line-height:1.4;}
-    .endorsement-rel{font-size:0.68rem;color:rgba(184,151,58,0.6);letter-spacing:0.05em;}
-    .endorsement-linkedin{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.3);text-decoration:none;margin-top:0.75rem;transition:color 0.2s;}
-    .endorsement-linkedin:hover{color:var(--gold-light);}
+    .endorsement-card{flex:0 0 calc(33.333% - 1rem);min-width:0;border:1px solid var(--mist);padding:1.75rem;background:var(--white);box-shadow:0 1px 3px rgba(13,27,42,0.06);transition:border-color 0.25s,box-shadow 0.25s;}
+    .endorsement-card:hover{border-color:rgba(184,151,58,0.5);box-shadow:0 6px 16px rgba(13,27,42,0.09);}
+    .endorsement-quote{font-size:1.8rem;color:var(--gold-text);opacity:0.75;line-height:1;margin-bottom:0.75rem;font-family:"Cormorant Garamond",serif;}
+    .endorsement-text{font-size:0.83rem;line-height:1.75;color:var(--text-muted);margin-bottom:1.25rem;font-style:italic;}
+    .endorsement-name{font-size:0.88rem;font-weight:500;color:var(--text);margin-bottom:0.2rem;}
+    .endorsement-title{font-size:0.75rem;color:var(--text-muted);margin-bottom:0.2rem;line-height:1.4;}
+    .endorsement-rel{font-size:0.68rem;color:var(--gold-text);letter-spacing:0.05em;}
+    .endorsement-linkedin{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--slate);text-decoration:none;margin-top:0.75rem;transition:color 0.2s;}
+    .endorsement-linkedin:hover{color:var(--gold-text);}
     .end-controls{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem;}
     .end-dots{display:flex;gap:0.5rem;flex-wrap:wrap;}
-    .end-dot{width:20px;height:2px;background:rgba(184,151,58,0.25);border:none;cursor:pointer;padding:0;transition:background 0.3s,width 0.3s;}
-    .end-dot.active{background:var(--gold);width:32px;}
+    .end-dot{width:20px;height:2px;background:rgba(13,27,42,0.15);border:none;cursor:pointer;padding:0;transition:background 0.3s,width 0.3s;}
+    .end-dot.active{background:var(--gold-text);width:32px;}
     .end-arrows{display:flex;gap:0.65rem;}
 
     /* BLOG */
@@ -215,18 +219,20 @@
     .ai-contact-link:hover{color:#fff;}
 
     /* CONTACT */
-    #contact-section{background:var(--navy);text-align:center;}
+    #contact-section{background:var(--white);text-align:center;}
     #contact-section .sec-eyebrow{justify-content:center;}
     #contact-section .sec-eyebrow::before{display:none;}
-    #contact-section .sec-heading{color:#fff;margin:0 auto;}
-    #contact-section .sec-sub{color:rgba(255,255,255,0.5);margin:1rem auto 0;max-width:480px;}
+    #contact-section .sec-heading{color:var(--text);margin:0 auto;}
+    #contact-section .sec-sub{color:var(--text-muted);margin:1rem auto 0;max-width:480px;}
     .contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2.5rem auto;max-width:700px;}
-    .contact-card{border:1px solid rgba(184,151,58,0.2);padding:1.75rem 1.25rem;text-align:left;text-decoration:none;display:flex;align-items:center;gap:1rem;transition:border-color 0.2s,background 0.2s;}
-    .contact-card:hover{border-color:rgba(184,151,58,0.6);background:rgba(184,151,58,0.05);}
-    .contact-card-icon{width:42px;height:42px;border:1px solid rgba(184,151,58,0.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
-    .contact-card-label{font-size:0.78rem;font-weight:500;color:#fff;display:block;margin-bottom:0.15rem;}
-    .contact-card-value{font-size:0.72rem;color:rgba(255,255,255,0.4);}
+    .contact-card{border:1px solid rgba(184,151,58,0.35);padding:1.75rem 1.25rem;text-align:left;text-decoration:none;display:flex;align-items:center;gap:1rem;background:var(--white);box-shadow:0 1px 3px rgba(13,27,42,0.05);transition:border-color 0.2s,box-shadow 0.2s;}
+    .contact-card:hover{border-color:var(--gold);background:var(--gold-pale);}
+    .contact-card-icon{width:42px;height:42px;border:1px solid rgba(184,151,58,0.4);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+    .contact-card-label{font-size:0.78rem;font-weight:500;color:var(--text);display:block;margin-bottom:0.15rem;}
+    .contact-card-value{font-size:0.72rem;color:var(--text-muted);}
     .contact-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;}
+    #contact-section .btn-outline{color:var(--navy);border-color:rgba(13,27,42,0.3);}
+    #contact-section .btn-outline:hover{border-color:var(--gold);color:var(--gold-text);}
 
     /* FOOTER */
     footer{background:var(--navy);border-top:1px solid rgba(184,151,58,0.15);padding:1.75rem 4rem;display:flex;align-items:center;justify-content:space-between;}
@@ -490,11 +496,11 @@
             <div><span class="contact-card-label">Schedule</span><span class="contact-card-value">Book a meeting</span></div>
           </a>
         </div>
-        <p style="font-size:0.88rem;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;">Start with an Audit – Identify inefficiencies in your tech, data, and marketing stack.</p>
-        <p style="font-size:0.88rem;color:rgba(255,255,255,0.4);margin-bottom:2rem;">Connect with me to discuss how strategic eCommerce leadership can increase revenue and valuation for your organization.</p>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:0.75rem;">Start with an Audit – Identify inefficiencies in your tech, data, and marketing stack.</p>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:2rem;">Connect with me to discuss how strategic eCommerce leadership can increase revenue and valuation for your organization.</p>
         <div class="contact-btns">
           <a href="mailto:huggardllc@gmail.com" class="btn-primary">Start a Conversation</a>
-          <a href="https://calendar.app.google/Pv1S3y72S8mwUvaE9" target="_blank" rel="noopener" class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.3);">Schedule Time with Me</a>
+          <a href="https://calendar.app.google/Pv1S3y72S8mwUvaE9" target="_blank" rel="noopener" class="btn-outline">Schedule Time with Me</a>
         </div>
       </div>
     </section>
